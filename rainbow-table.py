@@ -1,5 +1,6 @@
 import sys
 import hashlib
+import time
 
 charToNumber = {
     'o': '0', 'i': '1', 'l': '1', 'e': '3'
@@ -64,6 +65,7 @@ def setResult(word):
 
 def main():
     print("Hacking Passwords")
+    start_time_np = time.time()
     # if len(sys.argv) != 2:
     #     print("Usage: python3 hack-pass.py <inputPath>")
     #     return
@@ -90,8 +92,9 @@ def main():
     file_input.close()
     # print(rainbow_table)
     print(rainbow_table.get(target_value))
-
-    # print("Result: " + result)
+    print("table size:", len(rainbow_table))
+    end_time_np = time.time()
+    print("time:", end_time_np - start_time_np)
 
 
 if __name__ == '__main__':
